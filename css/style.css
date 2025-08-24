@@ -5,7 +5,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
 /* Black header bar */
 .top-header {
   background: #50200a;            /* black background */
-  padding: 3px 16px;           /* some top/bottom + left/right padding */
+  padding: 3px 16px;           /* some top/bottom + left/right padding */ /* The samller the 3px position, the thinner the banner */
 }
 
 /* Put the icon slightly to the right from the very edge */
@@ -55,6 +55,20 @@ body { margin: 0; font-family: Arial, sans-serif; }
   pointer-events: none;        /* cannot be interacted with while hidden */
   transition: opacity 160ms ease, transform 160ms ease;
 }
+
+.qr-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers text under image */
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;           /* text color */
+}
+
+.qr-item p {
+  margin-top: 5px;       /* spacing between QR code and text */
+}
+
 
 /* Desktop hover */
 .wechat:hover .qr-container {
