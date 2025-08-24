@@ -1,24 +1,29 @@
-/* General reset */
+/* Reset */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
   }
   
+  /* 🔹 Top header (background is black) */
   .top-header {
-    background: #333;
+    background: #000;       /* ✅ black background */
     padding: 0.5rem 1rem;
   }
   
+  /* Container for social icons */
   .social-icons {
     display: flex;
-    justify-content: flex-start; /* ✅ push items to the LEFT */
+    justify-content: flex-start; 
+    padding-left: 20px;     /* ✅ small space from left edge */
   }
   
+  /* WeChat container */
   .wechat {
     position: relative;
     display: inline-block;
   }
   
+  /* WeChat icon (normal colors, not blacked out) */
   .wechat-icon {
     width: 30px;
     height: 30px;
@@ -30,7 +35,7 @@ body {
     display: none;
     position: absolute;
     top: 40px;   /* appears below the icon */
-    left: 0;     /* ✅ aligned under the icon */
+    left: 0;
     background: white;
     padding: 10px;
     border: 2px solid #333;
@@ -41,6 +46,7 @@ body {
     gap: 10px;
   }
   
+  /* QR images */
   .qrcode {
     width: 120px;
     height: auto;
