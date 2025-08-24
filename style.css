@@ -1,60 +1,72 @@
 /* Reset */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* 🔹 Top header (background is black) */
-  .top-header {
-    background: #000;       /* ✅ black background */
-    padding: 0.5rem 1rem;
-  }
-  
-  /* Container for social icons */
-  .social-icons {
-    display: flex;
-    justify-content: flex-start; 
-    padding-left: 20px;     /* ✅ small space from left edge */
-  }
-  
-  /* WeChat container */
-  .wechat {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* WeChat icon (normal colors, not blacked out) */
-  .wechat-icon {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-  }
-  
-  /* QR container (hidden by default) */
-  .qr-container {
-    display: none;
-    position: absolute;
-    top: 40px;   /* appears below the icon */
-    left: 0;
-    background: white;
-    padding: 10px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  
-    display: flex;
-    gap: 10px;
-  }
-  
-  /* QR images */
-  .qrcode {
-    width: 120px;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  /* Show QR codes on hover */
-  .wechat:hover .qr-container {
-    display: flex;
-  }
-  
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+
+/* Black header bar */
+.top-header {
+  background: #000;            /* black background */
+  padding: 8px 16px;           /* some top/bottom + left/right padding */
+}
+
+/* Put the icon slightly to the right from the very edge */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 12px;          /* move a little to the right */
+}
+
+/* The clickable WeChat area */
+.wechat {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* The small WeChat icon (visible) */
+.wechat-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+/* The popup with two QR codes — hidden by default */
+.qr-container {
+  position: absolute;
+  top: 40px;        /* appears below the icon */
+  left: 0;
+  z-index: 1000;
+
+  /* layout */
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+
+  /* box styling */
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  /* hidden state */
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;        /* cannot be interacted with while hidden */
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+/* Show on hover */
+.wechat:hover .qr-container {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* QR images inside the popup */
+.qrcode {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
