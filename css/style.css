@@ -1,3 +1,195 @@
-document.addEventListener("DOMContentLoaded", function () {
-    alert("Welcome to my website!");
-});
+/* Reset */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; }
+
+/* Black header bar */
+.top-header {
+  background: #50200a;            /* black background */
+  padding: 3px 16px;           /* some top/bottom + left/right padding */
+}
+
+/* Put the icon slightly to the right from the very edge */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 12px;          /* move a little to the right */
+}
+
+/* The clickable WeChat area */
+.wechat {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* The small WeChat icon (visible) */
+.wechat-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+}
+
+/* The popup with two QR codes — hidden by default */
+.qr-container {
+  position: absolute;
+  top: 40px;        /* appears below the icon */
+  left: 0;
+  z-index: 2000;
+
+  /* layout */
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+
+  /* box styling */
+  background: #fff;
+  border: 2px solid #2d2d30;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  /* hidden state */
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;        /* cannot be interacted with while hidden */
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+/* Desktop hover */
+.wechat:hover .qr-container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  /* Mobile toggle class (added by JS) */
+  .qr-container.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+
+/* QR images inside the popup */
+.qrcode {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Second Header */
+.second-header {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+  
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Navigation panel layout */
+  .navigation-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* spread items */
+    position: relative;
+  }
+  
+  /* Logo stays left */
+  .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+  }
+  
+  /* Nav links: stay centered */
+  .nav-links {
+    position: absolute;         /* keep absolute centering */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+  }
+  
+/* Default (desktop) */
+.navigation-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 25px;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .navigation-panel {
+    flex-direction: column;   /* stack logo & nav */
+    align-items: center;
+  }
+
+  .nav-links {
+    position: static;         /* cancel absolute centering */
+    transform: none;
+    margin-top: 10px;         /* some spacing below logo */
+    flex-wrap: wrap;          /* allow wrapping if too many links */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .logo-img {
+    height: 40px; /* slightly smaller logo for mobile */
+  }
+}
+
+
+  /* Nav link styling */
+  .nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #0073e6;
+  }
+  
+  /* General Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* First Main Content Section */
+  .main-section {
+    background-color: #bea89d2b; 
+    color: #222;                /* text color */
+    padding: 60px 20px;
+    text-align: center;         /* center align text for now */
+  }
+  
+  .main-section h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .main-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+  }
+  
