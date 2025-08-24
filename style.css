@@ -56,12 +56,20 @@ body { margin: 0; font-family: Arial, sans-serif; }
   transition: opacity 160ms ease, transform 160ms ease;
 }
 
-/* Show on hover */
+/* Desktop hover */
 .wechat:hover .qr-container {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  /* Mobile toggle class (added by JS) */
+  .qr-container.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
 
 /* QR images inside the popup */
 .qrcode {

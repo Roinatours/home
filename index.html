@@ -22,6 +22,25 @@
                     <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account QR Code" class="qrcode">
                 </div>
             </a>
+            <script>
+                // Mobile toggle for QR popup
+                document.addEventListener("DOMContentLoaded", () => {
+                  const wechatLink = document.querySelector(".wechat");
+                  const qrBox = document.querySelector(".qr-container");
+              
+                  wechatLink.addEventListener("click", (e) => {
+                    e.preventDefault(); // prevent jumping to top
+                    qrBox.classList.toggle("show");
+                  });
+              
+                  // Optional: tap anywhere outside to close
+                  document.addEventListener("click", (e) => {
+                    if (!wechatLink.contains(e.target)) {
+                      qrBox.classList.remove("show");
+                    }
+                  });
+                });
+              </script>
           </div>
      </header>
 </body>
