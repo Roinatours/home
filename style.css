@@ -1,3 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-    alert("Welcome to my website!");
-});
+.wechat {
+    position: relative; /* So QR code can be positioned relative to this */
+    display: inline-block;
+  }
+  
+  /* Default WeChat icon (always visible) */
+  .wechat-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* QR code (hidden by default) */
+  .qrcode {
+    display: none;
+    position: absolute;
+    top: 40px;   /* pushes QR code below the icon */
+    left: -40px;
+    width: 120px;
+    border: 2px solid #333;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Show QR code only when hovering */
+  .wechat:hover .qrcode {
+    display: block;
+  }
+  
