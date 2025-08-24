@@ -4,8 +4,8 @@ body { margin: 0; font-family: Arial, sans-serif; }
 
 /* Black header bar */
 .top-header {
-  background: #000;            /* black background */
-  padding: 8px 16px;           /* some top/bottom + left/right padding */
+  background: #50200a;            /* black background */
+  padding: 3px 16px;           /* some top/bottom + left/right padding */
 }
 
 /* Put the icon slightly to the right from the very edge */
@@ -25,8 +25,8 @@ body { margin: 0; font-family: Arial, sans-serif; }
 
 /* The small WeChat icon (visible) */
 .wechat-icon {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   display: block;
   cursor: pointer;
 }
@@ -36,7 +36,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
   position: absolute;
   top: 40px;        /* appears below the icon */
   left: 0;
-  z-index: 1000;
+  z-index: 2000;
 
   /* layout */
   display: flex;
@@ -45,7 +45,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
 
   /* box styling */
   background: #fff;
-  border: 2px solid #333;
+  border: 2px solid #2d2d30;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 
@@ -78,3 +78,75 @@ body { margin: 0; font-family: Arial, sans-serif; }
   border-radius: 6px;
   display: block;
 }
+
+/* Second Header */
+.second-header {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+
+    position: sticky; /* makes it stick */
+    top: 0;           /* stick to very top */
+    z-index: 1000;    /* ensure it stays above other content */
+  }
+  
+  .navigation-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* important for absolute centering */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo: stays left */
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Nav links: centered absolutely */
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #0073e6;
+  }
+
+  /* General Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* First Main Content Section */
+  .main-section {
+    background-color: #bea89d2b; 
+    color: #222;                /* text color */
+    padding: 60px 20px;
+    text-align: center;         /* center align text for now */
+  }
+  
+  .main-section h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .main-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+  }
+  
