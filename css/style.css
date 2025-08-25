@@ -97,7 +97,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
 .second-header {
     background-color: #fff;
     border-bottom: 2px solid #ddd;
-    padding: 10px 20px;
+    padding: 15px 20px;
   
     position: sticky;
     top: 0;
@@ -116,7 +116,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
   
   /* Logo stays left */
   .logo img {
-    height: 50px;
+    height: 100px;
     width: auto;
     display: block;
   }
