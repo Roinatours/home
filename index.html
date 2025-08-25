@@ -10,49 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
-     <!-- First header: Social Media Icons -->
-     <header class="top-header">
-        <div class="social-icons">
-            <a href="#" class="wechat">
-                <img src="data/icons/Wechat.png" alt="WeChat Icon" class="wechat-icon">
-                <!-- Hidden QR Codes -->
-                <div class="qr-container", role = "tooltip">
-                    <div class="qr-item">
-                      <img src="data/Wechat_Service_Account_QR_code.jpg" alt="WeChat Service Account QR Code" class="qrcode">
-                      <p>Contact Us</p>
-                    </div>
-                    <div class="qr-item">
-                      <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account QR Code" class="qrcode">
-                      <p>Official Account</p>
-                    </div>
-                  </div>
-            </a>
-            <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9?xsec_token=YBew2HOJjCNKIGAUprfQzed0j5g1wMqMmsje8w5oaElmg=&xsec_source=app_share&xhsshare=CopyLink&appuid=5cb2a8cd000000001002ff74&apptime=1756115688&share_id=1ba02eac1ba34da6a6ae867389b5149d" 
-                class="xiaohongshu" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/XiaoHongShu.png" alt="XiaoHongShu Icon" class="icon">
-            </a>
-            <a href="https://www.instagram.com/roinatours?igsh=czNycm5yamlvdG9q" 
-                class="instagram" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/Instagram.png" alt="Instagram Icon" class="icon">
-            </a>
-            <a href="https://www.linkedin.com/company/roina-tours/" 
-                class="linkedin" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/LinkedIn.png" alt="LinkedIn Icon" class="icon">
-            </a>
-            <a href="#" class="email">
-                <img src="data/icons/Email.png" alt="Email Icon" class="icon">
-                <p>
-                    roinatours@gmail.com
-                </p>
-            </a>
-            <script>
+<script>
                 // Mobile toggle for QR popup
                 document.addEventListener("DOMContentLoaded", () => {
                   const wechatLink = document.querySelector(".wechat");
@@ -71,6 +29,66 @@
                   });
                 });
               </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const langSwitch = document.querySelector(".language-switch");
+    const langBtn = langSwitch.querySelector(".lang-btn");
+
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langSwitch.classList.toggle("show");
+    });
+
+    // Close menu if click outside
+    document.addEventListener("click", () => {
+      langSwitch.classList.remove("show");
+    });
+  });
+</script>
+
+<body>
+     <!-- First header: Social Media Icons -->
+     <header class="top-header">
+        <div class="social-icons">
+            <div class="wechat">
+                <img src="data/icons/Wechat.png" alt="WeChat Icon" class="wechat-icon">
+                <!-- Hidden QR Codes -->
+                <div class="qr-container", role = "tooltip">
+                    <div class="qr-item">
+                      <img src="data/Wechat_Service_Account_QR_code.jpg" alt="WeChat Service Account QR Code" class="qrcode">
+                      <p>Contact Us</p>
+                    </div>
+                    <div class="qr-item">
+                      <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account QR Code" class="qrcode">
+                      <p>Official Account</p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9?xsec_token=YBew2HOJjCNKIGAUprfQzed0j5g1wMqMmsje8w5oaElmg=&xsec_source=app_share&xhsshare=CopyLink&appuid=5cb2a8cd000000001002ff74&apptime=1756115688&share_id=1ba02eac1ba34da6a6ae867389b5149d" 
+                class="xiaohongshu" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <img src="data/icons/XiaoHongShu.png" alt="XiaoHongShu Icon" class="icon">
+            </a>
+            <a href="https://www.instagram.com/roinatours?igsh=czNycm5yamlvdG9q" 
+                class="instagram" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <img src="data/icons/Instagram.png" alt="Instagram Icon" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/company/roina-tours/" 
+                class="linkedin" 
+                target="_blank" 
+                rel="noopener noreferrer">
+                <img src="data/icons/LinkedIn.png" alt="LinkedIn Icon" class="icon">
+            </a>
+            <div class="email">
+                <img src="data/icons/Email.png" alt="Email Icon" class="icon">
+                <p>
+                    roinatours@gmail.com
+                </p>
+              </div>
           </div>
      </header>
 
@@ -92,7 +110,11 @@
 
     <!-- Language on the right -->
     <div class="language-switch">
-      <a href="#">Language</a>
+      <button class="lang-btn">Language ▾</button>
+      <ul class="lang-menu">
+        <li><a href="#">English</a></li>
+        <li><a href="#">中文简体</a></li>
+      </ul>
     </div>
   </div>
 </header>
