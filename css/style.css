@@ -14,6 +14,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
   align-items: center;
   justify-content: flex-start;
   padding-left: 12px;          /* move a little to the right */
+  gap: 15px;            /* space between each icon */
 }
 
 /* The clickable WeChat area */
@@ -91,6 +92,49 @@ body { margin: 0; font-family: Arial, sans-serif; }
   height: auto;
   border-radius: 6px;
   display: block;
+}
+
+/* XiaoHongShu Icon (no hover effect) */
+.xiaohongshu .icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  cursor: pointer;
+}
+
+.instagram .icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+}
+
+.linkedin .icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  cursor: pointer;
+}
+
+/* Email section */
+.email {
+  display: flex;
+  align-items: center;   /* vertically align icon & text */
+  text-decoration: none;
+  gap: 6px;              /* space between icon & text */
+  color: #fff;           /* adjust color to match top header */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.email img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.email p {
+  margin: 0;             /* remove default spacing */
 }
 
 /* Second Header */
