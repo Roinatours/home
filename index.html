@@ -1,117 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <!-- Invisible settings -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
-<script>
-                // Mobile toggle for QR popup
-                document.addEventListener("DOMContentLoaded", () => {
-                  const wechatLink = document.querySelector(".wechat");
-                  const qrBox = document.querySelector(".qr-container");
-              
-                  wechatLink.addEventListener("click", (e) => {
-                    e.preventDefault(); // prevent jumping to top
-                    qrBox.classList.toggle("show");
-                  });
-              
-                  // Optional: tap anywhere outside to close
-                  document.addEventListener("click", (e) => {
-                    if (!wechatLink.contains(e.target)) {
-                      qrBox.classList.remove("show");
-                    }
-                  });
-                });
-              </script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const langSwitch = document.querySelector(".language-switch");
-    const langBtn = langSwitch.querySelector(".lang-btn");
-
-    langBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      langSwitch.classList.toggle("show");
-    });
-
-    // Close menu if click outside
-    document.addEventListener("click", () => {
-      langSwitch.classList.remove("show");
-    });
-  });
-</script>
-
 <body>
-     <!-- First header: Social Media Icons -->
-     <header class="top-header">
-        <div class="social-icons">
-            <div class="wechat">
-                <img src="data/icons/Wechat.png" alt="WeChat Icon" class="wechat-icon">
-                <!-- Hidden QR Codes -->
-                <div class="qr-container", role = "tooltip">
-                    <div class="qr-item">
-                      <img src="data/Wechat_Service_Account_QR_code.jpg" alt="WeChat Service Account QR Code" class="qrcode">
-                      <p>Contact Us</p>
-                    </div>
-                    <div class="qr-item">
-                      <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account QR Code" class="qrcode">
-                      <p>Official Account</p>
-                    </div>
-                </div>
-            </div>
-            <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9?xsec_token=YBew2HOJjCNKIGAUprfQzed0j5g1wMqMmsje8w5oaElmg=&xsec_source=app_share&xhsshare=CopyLink&appuid=5cb2a8cd000000001002ff74&apptime=1756115688&share_id=1ba02eac1ba34da6a6ae867389b5149d" 
-                class="xiaohongshu" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/XiaoHongShu.png" alt="XiaoHongShu Icon" class="icon">
-            </a>
-            <a href="https://www.instagram.com/roinatours?igsh=czNycm5yamlvdG9q" 
-                class="instagram" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/Instagram.png" alt="Instagram Icon" class="icon">
-            </a>
-            <a href="https://www.linkedin.com/company/roina-tours/" 
-                class="linkedin" 
-                target="_blank" 
-                rel="noopener noreferrer">
-                <img src="data/icons/LinkedIn.png" alt="LinkedIn Icon" class="icon">
-            </a>
-            <div class="email">
-                <img src="data/icons/Email.png" alt="Email Icon" class="icon">
-                <p>
-                    roinatours@gmail.com
-                </p>
-              </div>
-          </div>
-     </header>
 
-   <!-- Second header: Navigation Panel -->
+<!-- Top Header -->
+<header class="top-header">
+  <div class="social-icons">
+    <div class="wechat">
+      <img src="data/icons/Wechat.png" alt="WeChat" class="wechat-icon">
+      <div class="qr-container" role="tooltip">
+        <div class="qr-item">
+          <img src="data/Wechat_Service_Account_QR_code.jpg" alt="WeChat Service Account" class="qrcode">
+          <p>Contact Us</p>
+        </div>
+        <div class="qr-item">
+          <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account" class="qrcode">
+          <p>Official Account</p>
+        </div>
+      </div>
+    </div>
+    <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9?xsec_token=YBew2HOJjCNKIGAUprfQzed0j5g1wMqMmsje8w5oaElmg=&xsec_source=app_share&xhsshare=CopyLink&appuid=5cb2a8cd000000001002ff74&apptime=1756115688&share_id=1ba02eac1ba34da6a6ae867389b5149d" 
+      target="_blank" 
+      class="xiaohongshu">
+      <img src="data/icons/XiaoHongShu.png" class="icon">
+    </a>
+    <a href="https://www.instagram.com/roinatours?igsh=czNycm5yamlvdG9q" target="_blank" class="instagram"><img src="data/icons/Instagram.png" class="icon"></a>
+    <a href="https://www.linkedin.com/company/roina-tours/" target="_blank" class="linkedin"><img src="data/icons/LinkedIn.png" class="icon"></a>
+    <div class="email"><img src="data/icons/Email.png" alt="Email"><p>roinatours@gmail.com</p></div>
+  </div>
+</header>
+
+<!-- Second Header -->
 <header class="second-header">
   <div class="navigation-panel">
-    <!-- Logo -->
-    <a href="#" class="logo">
-      <img src="data/Roina_Tours_Logo.png" alt="Roina Tours" class="logo-img">
-    </a>
-
-    <!-- Navigation links -->
+    <!-- Left Logo -->
+    <a href="#" class="logo"><img src="data/Roina_Tours_Logo.png" alt="Roina Tours"></a>
+    
+    <!-- Center Nav Links (except language) -->
     <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Destinations</a>
+      <a href="https://roinatours.github.io/home/">Home</a>
+
+      <!-- Destinations -->
+      <div class="dropdown">
+        <a href="#" class="drop-link">Destinations ▾</a>
+        <ul class="drop-menu">
+          <li><a href="#">Gui Lin</a></li>
+          <li><a href="#">Xi An</a></li>
+          <li><a href="#">Hulunbuir</a></li>
+          <li><a href="#">Shanghai</a></li>
+        </ul>
+      </div>
+
       <a href="#">Blogs</a>
       <a href="#">About Us</a>
     </nav>
 
-    <!-- Language on the right -->
-    <div class="language-switch">
-      <button class="lang-btn">Language ▾</button>
-      <ul class="lang-menu">
+    <!-- Right Language -->
+    <div class="language-dropdown dropdown">
+      <a href="#" class="drop-link">Language ▾</a>
+      <ul class="drop-menu">
         <li><a href="#">English</a></li>
         <li><a href="#">中文简体</a></li>
       </ul>
@@ -119,22 +71,47 @@
   </div>
 </header>
 
-
-<!-- Main Body -->
+<!-- Main -->
 <main>
-    <!-- First Main Content Section -->
-    <section class="main-section">
-      <h1>Our First Main Content</h1>
-      <p>
-        This is where your first main content will go. 
-        You can test different background colors, font sizes, and layouts here.
-      </p>
-  
-      <p>
-        Try adding more text, images, or even cards later. For now, this section 
-        is just for testing background color.
-      </p>
-    </section>
-  </main>    
+  <section class="main-section">
+    <h1>Our First Main Content</h1>
+    <p>This is where your first main content will go. You can test different background colors, font sizes, and layouts here.</p>
+    <p>Try adding more text, images, or even cards later. For now, this section is just for testing background color.</p>
+  </section>
+</main>
+
+<script>
+  // QR toggle on mobile
+  document.addEventListener("DOMContentLoaded", () => {
+    const wechatLink = document.querySelector(".wechat");
+    const qrBox = document.querySelector(".qr-container");
+    wechatLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      qrBox.classList.toggle("show");
+    });
+    document.addEventListener("click", (e) => {
+      if (!wechatLink.contains(e.target)) qrBox.classList.remove("show");
+    });
+
+    // Dropdown toggle on mobile
+    document.querySelectorAll(".dropdown .drop-link").forEach(dropLink => {
+      dropLink.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) { // only on mobile
+          e.preventDefault();
+          const parentDropdown = dropLink.parentElement;
+          parentDropdown.classList.toggle("open");
+        }
+      });
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", (e) => {
+      document.querySelectorAll(".dropdown.open").forEach(d => {
+        if (!d.contains(e.target)) d.classList.remove("open");
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

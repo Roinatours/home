@@ -4,315 +4,134 @@ body { margin: 0; font-family: Arial, sans-serif; }
 
 /* Black header bar */
 .top-header {
-  background: #50200a;            /* black background */
-  padding: 3px 16px;           /* some top/bottom + left/right padding */ /* The samller the 3px position, the thinner the banner */
+  background: #50200a;
+  padding: 3px 16px;
 }
 
-/* Put the icon slightly to the right from the very edge */
+/* Social icons */
 .social-icons {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 12px;          /* move a little to the right */
-  gap: 15px;            /* space between each icon */
+  gap: 15px;
+  padding-left: 12px;
 }
 
-/* The clickable WeChat area */
-.wechat {
-  position: relative;
-  display: inline-block;
-  text-decoration: none;
-}
-
-/* The small WeChat icon (visible) */
-.wechat-icon {
-  width: 20px;
-  height: 20px;
-  display: block;
-  cursor: pointer;
-}
-
-/* The popup with two QR codes — hidden by default */
+/* WeChat icon + QR popup */
+.wechat { position: relative; display: inline-block; }
+.wechat-icon { width: 20px; height: 20px; cursor: pointer; }
 .qr-container {
   position: absolute;
-  top: 40px;        /* appears below the icon */
-  left: 0;
-  z-index: 2000;
-
-  /* layout */
-  display: flex;
-  gap: 10px;
+  top: 40px; left: 0;
+  display: flex; gap: 10px;
   padding: 10px;
-
-  /* box styling */
   background: #fff;
   border: 2px solid #2d2d30;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-
-  /* hidden state */
-  opacity: 0;
-  transform: translateY(4px);
-  pointer-events: none;        /* cannot be interacted with while hidden */
+  opacity: 0; transform: translateY(4px);
+  pointer-events: none;
   transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 2000;
 }
-
-.qr-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* centers text under image */
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;           /* text color */
+.qr-item { text-align: center; font-size: 14px; font-weight: 500; color: #333; }
+.qr-item p { margin-top: 5px; }
+.wechat:hover .qr-container, .qr-container.show {
+  opacity: 1; pointer-events: auto; transform: translateY(0);
 }
+.qrcode { width: 120px; border-radius: 6px; }
 
-.qr-item p {
-  margin-top: 5px;       /* spacing between QR code and text */
-}
-
-
-/* Desktop hover */
-.wechat:hover .qr-container {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  
-  /* Mobile toggle class (added by JS) */
-  .qr-container.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  
-
-/* QR images inside the popup */
-.qrcode {
-  width: 120px;
-  height: auto;
-  border-radius: 6px;
-  display: block;
-}
-
-/* XiaoHongShu Icon (no hover effect) */
-.xiaohongshu .icon {
-  width: 18px;
-  height: 18px;
-  display: block;
-  cursor: pointer;
-}
-
-.instagram .icon {
-  width: 20px;
-  height: 20px;
-  display: block;
-  cursor: pointer;
-}
-
-.linkedin .icon {
-  width: 20px;
-  height: 20px;
-  display: block;
-  cursor: pointer;
-}
-
-/* Email section */
-.email {
-  display: flex;
-  align-items: center;   /* vertically align icon & text */
-  text-decoration: none;
-  gap: 6px;              /* space between icon & text */
-  color: #fff;           /* adjust color to match top header */
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.email img {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
-.email p {
-  margin: 0;             /* remove default spacing */
-}
+/* Other icons */
+.icon { display: block; cursor: pointer; }
+.xiaohongshu .icon { width: 18px; height: 18px; }
+.instagram .icon, .linkedin .icon, .email img { width: 20px; height: 20px; }
+.email { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; }
+.email p { margin: 0; }
 
 /* Second Header */
 .second-header {
-    background-color: #fff;
-    border-bottom: 2px solid #ddd;
-    padding: 15px 20px;
-  
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  /* Navigation panel layout */
-.navigation-panel {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* logo left, nav center, lang right */
-  position: relative;
-}
-  
-  /* Logo stays left */
-  .logo img {
-    height: 100px;
-    width: auto;
-    display: block;
-  }
-  
- /* Nav links stay in the middle */
-.nav-links {
-  display: flex;
-  gap: 25px;
-  flex: 1;                    /* take available space */
-  justify-content: center;    /* center links */
-}
-
-
-/* Language section on the right */
-.language-switch a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-/* Default (desktop) */
-.navigation-panel {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 25px;
-}
-
-/* Mobile fix */
-@media (max-width: 768px) {
-  .navigation-panel {
-    flex-direction: column;   /* stack logo & nav */
-    align-items: center;
-  }
-
-  .nav-links {
-    position: static;         /* cancel absolute centering */
-    transform: none;
-    margin-top: 10px;         /* some spacing below logo */
-    flex-wrap: wrap;          /* allow wrapping if too many links */
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .logo-img {
-    height: 40px; /* slightly smaller logo for mobile */
-  }
-}
-
-
-  /* Nav link styling */
-  .nav-links a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    transition: color 0.2s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #0073e6;
-  }
-  
-/* Language Switch */
-.language-switch {
-  position: relative;
-}
-
-.lang-btn {
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.lang-btn:hover {
-  color: #0073e6;
-}
-
-/* Dropdown Menu */
-.lang-menu {
-  list-style: none;
-  margin: 0;
-  padding: 8px 0;
   background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  min-width: 120px;
-  display: none;   /* hidden by default */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-bottom: 2px solid #ddd;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0; z-index: 1000;
+}
+.navigation-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative;
+}
+.logo img { height: 100px; }
+
+/* Nav links */
+.nav-links {
+  display: flex; gap: 25px;
+  flex: 1; justify-content: center;
+}
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px; font-weight: 500;
+  color: #333; transition: color 0.2s ease;
+}
+.nav-links a:hover { color: #50200a; }
+
+/* Language dropdown aligned right */
+.language-dropdown { margin-left: auto; }
+
+/* Dropdown */
+.dropdown { position: relative; display: inline-block; }
+.drop-link {
+  font-size: 16px; font-weight: 500; color: #333;
+  text-decoration: none; cursor: pointer;
+  padding: 6px 12px; transition: color 0.2s ease;
+}
+.drop-link:hover { color: #0073e6; }
+.drop-menu {
+  position: absolute; top: 100%; left: 0;
+  list-style: none; margin: 0; padding: 0;
+  background: #fff;
+  border: 1px solid #ddd; border-radius: 6px;
+  min-width: 160px;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   z-index: 1000;
 }
+.drop-menu li { border-bottom: 1px solid #eee; }
+.drop-menu li:last-child { border-bottom: none; }
+.drop-menu li a {
+  display: block; padding: 10px 14px;
+  text-decoration: none; font-size: 15px; color: #333;
+}
+.drop-menu li a:hover { background: #f4f4f4; color: #0073e6; }
 
-.lang-menu li {
-  padding: 5px 15px;
+/* Show dropdown on hover (desktop) */
+.dropdown:hover .drop-menu { display: block; }
+
+/* Show dropdown on tap (mobile JS adds .open) */
+.dropdown.open .drop-menu { display: block; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navigation-panel { flex-direction: row; align-items: center; }
+  .logo img { height: 60px; }
+  .nav-links { flex-wrap: wrap; gap: 15px; }
 }
 
-.lang-menu li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-  display: block;
+/* Main section */ 
+.main-section { 
+  background: #bea89d2b; 
+  color: #222; 
+  padding: 60px 20px; 
+  text-align: center; 
+} 
+
+.main-section h1 {
+   font-size: 2em; 
+   margin-bottom: 20px; 
+} 
+
+.main-section p { 
+  max-width: 800px; 
+  margin: 0 auto 20px; 
+  line-height: 1.6; 
 }
-
-.lang-menu li:hover {
-  background: #f5f5f5;
-}
-
-.language-switch.show .lang-menu {
-  display: block;
-}
-
-
-  /* General Body */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* First Main Content Section */
-  .main-section {
-    background-color: #bea89d2b; 
-    color: #222;                /* text color */
-    padding: 60px 20px;
-    text-align: center;         /* center align text for now */
-  }
-  
-  .main-section h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  .main-section p {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    line-height: 1.6;
-  }
-  
