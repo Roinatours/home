@@ -17,7 +17,8 @@ body { margin: 0; font-family: Arial, sans-serif; }
 }
 
 /* WeChat icon + QR popup */
-.wechat { position: relative; display: inline-block; }
+.wechat { display: flex;
+  align-items: center; /* centers the icon vertically */ }
 .wechat-icon { width: 20px; height: 20px; cursor: pointer; }
 .qr-container {
   position: absolute;
