@@ -204,10 +204,12 @@ body { margin: 0; font-family: Arial, sans-serif; }
   color: #fff !important;
 }
 
-/* Flash effect on tap (JS-assisted class) */
-.mobile-menu .drop-menu li a.is-tapping {
+
+/* Flash effect on tap for mobile submenu links */
+.mobile-menu .drop-menu li a.is-tapping,
+.mobile-menu .drop-menu li a:hover {
   background-color: #50200a !important;
-  color: #fff !important;
+  color: #ffffff !important;
 }
 
 /* QR row (used inside contact dropdown) */
