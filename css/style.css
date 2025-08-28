@@ -2,10 +2,13 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Arial, sans-serif; }
 
-/* Black header bar */
+/* Top Header (hidden on mobile) */
 .top-header {
   background: #50200a;
   padding: 3px 16px;
+}
+@media (max-width: 768px) {
+  .top-header { display: none; }
 }
 
 /* Social icons */
@@ -17,29 +20,29 @@ body { margin: 0; font-family: Arial, sans-serif; }
 }
 
 /* WeChat icon + QR popup */
-.wechat { display: flex;
-  align-items: center; /* centers the icon vertically */ }
+.wechat { position: relative; display: flex; align-items: center; }
 .wechat-icon { width: 20px; height: 20px; cursor: pointer; }
+
+/* QR popup */
 .qr-container {
   position: absolute;
-  top: 40px; left: 0;
-  display: flex; gap: 10px;
-  padding: 10px;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: row;
+  gap: 10px;
   background: #fff;
-  border: 2px solid #2d2d30;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  opacity: 0; transform: translateY(4px);
-  pointer-events: none;
-  transition: opacity 160ms ease, transform 160ms ease;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   z-index: 2000;
 }
 .qr-item { text-align: center; font-size: 14px; font-weight: 500; color: #333; }
-.qr-item p { margin-top: 5px; }
-.wechat:hover .qr-container, .qr-container.show {
-  opacity: 1; pointer-events: auto; transform: translateY(0);
-}
 .qrcode { width: 120px; border-radius: 6px; }
+.qr-item p { margin: 4px 0 0 0; font-size: 13px; line-height: 1.2; }
+.wechat:hover .qr-container { display: flex; }
+.qr-container.show { display: flex; }
 
 /* Other icons */
 .icon { display: block; cursor: pointer; }
@@ -54,85 +57,194 @@ body { margin: 0; font-family: Arial, sans-serif; }
   border-bottom: 2px solid #ddd;
   padding: 15px 20px;
   position: sticky;
-  top: 0; z-index: 1000;
+  top: 0;
+  z-index: 1000;
 }
 .navigation-panel {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 .logo img { height: 100px; }
 
-/* Nav links */
+/* Hamburger (hidden desktop, shown mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+}
+
+/* Desktop Nav */
 .nav-links {
-  display: flex; gap: 25px;
-  flex: 1; justify-content: center;
+  display: flex;
+  gap: 25px;
+  flex: 1;
+  justify-content: center;
 }
 .nav-links a {
   text-decoration: none;
-  font-size: 16px; font-weight: 500;
-  color: #333; transition: color 0.2s ease;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.2s ease;
 }
-.nav-links a:hover { color: #50200a; }
-
-/* Language dropdown aligned right */
+.nav-links a:hover { color: #d29836; }
 .language-dropdown { margin-left: auto; }
 
-/* Dropdown */
+/* Dropdown (desktop default) */
 .dropdown { position: relative; display: inline-block; }
 .drop-link {
-  font-size: 16px; font-weight: 500; color: #333;
-  text-decoration: none; cursor: pointer;
-  padding: 6px 12px; transition: color 0.2s ease;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: color 0.2s ease;
 }
-.drop-link:hover { color: #0073e6; }
+.drop-link:hover { color: #d29836; }
 .drop-menu {
-  position: absolute; top: 100%; left: 0;
-  list-style: none; margin: 0; padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   background: #fff;
-  border: 1px solid #ddd; border-radius: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   min-width: 160px;
   display: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-.drop-menu li { border-bottom: 1px solid #eee; }
-.drop-menu li:last-child { border-bottom: none; }
 .drop-menu li a {
-  display: block; padding: 10px 14px;
-  text-decoration: none; font-size: 15px; color: #333;
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #333;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.drop-menu li a:hover { background: #f4f4f4; color: #0073e6; }
-
-/* Show dropdown on hover (desktop) */
+.drop-menu li a:hover { background-color: #50200a; color: #fff; }
 .dropdown:hover .drop-menu { display: block; }
-
-/* Show dropdown on tap (mobile JS adds .open) */
 .dropdown.open .drop-menu { display: block; }
 
-/* Mobile */
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.mobile-menu.show { display: flex; }
+.mobile-menu a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+.mobile-menu a:hover { color: #d29836; }
+
+/* Override dropdowns inside mobile menu */
+.mobile-menu .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu .drop-link {
+  padding: 8px 0;
+}
+
+.mobile-menu .drop-menu {
+  position: relative;   /* inline, not absolute */
+  top: auto;
+  left: auto;
+  border: none;
+  box-shadow: none;
+  background: none;
+  min-width: auto;
+  padding-left: 15px;
+  display: none;
+  flex-direction: column;
+}
+
+.mobile-menu .drop-menu li a {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #555;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+/* keep dropdown open in mobile */
+.mobile-menu .dropdown.open .drop-menu {
+  display: flex;
+}
+
+/* Flash effect on tap (CSS path) */
+.mobile-menu .drop-menu li a:active,
+.mobile-menu .drop-menu li a:focus {
+  background-color: #50200a;
+  color: #fff !important;
+}
+
+/* Flash effect on tap (JS-assisted class) */
+.mobile-menu .drop-menu li a.is-tapping {
+  background-color: #50200a !important;
+  color: #fff !important;
+}
+
+/* QR row (used inside contact dropdown) */
+.qr-row { display: flex; gap: 10px; margin: 10px 0; }
+.qr-row .qrcode { width: 100px; border-radius: 6px; }
+
+/* Contact dropdown (mobile) */
+.contact-menu {
+  padding: 10px 0 0 15px;
+  background: none;
+}
+.contact-menu p {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+.contact-menu .qr-row {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.contact-menu .qrcode {
+  width: 100px;
+  border-radius: 6px;
+}
+
+/* Hide desktop nav on mobile */
 @media (max-width: 768px) {
-  .navigation-panel { flex-direction: row; align-items: center; }
+  .nav-links, .language-dropdown { display: none; }
   .logo img { height: 60px; }
-  .nav-links { flex-wrap: wrap; gap: 15px; }
 }
 
 /* Main section */ 
-.main-section { 
-  background: #bea89d2b; 
-  color: #222; 
-  padding: 60px 20px; 
-  text-align: center; 
-} 
-
-.main-section h1 {
-   font-size: 2em; 
-   margin-bottom: 20px; 
-} 
-
-.main-section p { 
-  max-width: 800px; 
-  margin: 0 auto 20px; 
-  line-height: 1.6; 
+.main-section {
+  background: #bea89d2b;
+  color: #222;
+  padding: 60px 20px;
+  text-align: center;
 }
+.main-section h1 { font-size: 2em; margin-bottom: 20px; }
+.main-section p { max-width: 800px; margin: 0 auto 20px; line-height: 1.6; }
