@@ -2,14 +2,12 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Arial, sans-serif; }
 
-/* Top Header (hidden on mobile) */
+/* Top Header */
 .top-header {
   background: #50200a;
   padding: 3px 16px;
 }
-@media (max-width: 768px) {
-  .top-header { display: none; }
-}
+@media (max-width: 768px) { .top-header { display: none; } }
 
 /* Social icons */
 .social-icons {
@@ -18,8 +16,6 @@ body { margin: 0; font-family: Arial, sans-serif; }
   gap: 15px;
   padding-left: 12px;
 }
-
-/* WeChat icon + QR popup */
 .wechat { position: relative; display: flex; align-items: center; }
 .wechat-icon { width: 20px; height: 20px; cursor: pointer; }
 
@@ -40,7 +36,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
 }
 .qr-item { text-align: center; font-size: 14px; font-weight: 500; color: #333; }
 .qrcode { width: 120px; border-radius: 6px; }
-.qr-item p { margin: 4px 0 0 0; font-size: 13px; line-height: 1.2; }
+.qr-item p { margin: 4px 0 0; font-size: 13px; line-height: 1.2; }
 .wechat:hover .qr-container { display: flex; }
 .qr-container.show { display: flex; }
 
@@ -48,7 +44,7 @@ body { margin: 0; font-family: Arial, sans-serif; }
 .icon { display: block; cursor: pointer; }
 .xiaohongshu .icon { width: 18px; height: 18px; }
 .instagram .icon, .linkedin .icon, .email img { width: 20px; height: 20px; }
-.email { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; }
+.email { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 14px; font-weight: 500; }
 .email p { margin: 0; }
 
 /* Second Header */
@@ -66,182 +62,104 @@ body { margin: 0; font-family: Arial, sans-serif; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 .logo img { height: 100px; }
 
-/* Hamburger (hidden desktop, shown mobile) */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #333;
-}
-@media (max-width: 768px) {
-  .menu-toggle { display: block; }
-}
+/* Hamburger */
+.menu-toggle { display: none; font-size: 28px; cursor: pointer; background: none; border: none; }
+@media (max-width: 768px) { .menu-toggle { display: block; } }
 
 /* Desktop Nav */
-.nav-links {
-  display: flex;
-  gap: 25px;
-  flex: 1;
-  justify-content: center;
-}
-.nav-links a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  transition: color 0.2s ease;
-}
+.nav-links { display: flex; gap: 25px; flex: 1; justify-content: center; }
+.nav-links a { text-decoration: none; font-size: 16px; font-weight: 500; color: #333; transition: color 0.2s ease; }
 .nav-links a:hover { color: #d29836; }
 .language-dropdown { margin-left: auto; }
 
-/* Dropdown (desktop default) */
+/* Dropdown */
 .dropdown { position: relative; display: inline-block; }
-.drop-link {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  text-decoration: none;
-  cursor: pointer;
-  padding: 6px 12px;
-  transition: color 0.2s ease;
-}
+.drop-link { font-size: 16px; font-weight: 500; color: #333; text-decoration: none; cursor: pointer; padding: 6px 12px; }
 .drop-link:hover { color: #d29836; }
 .drop-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  min-width: 160px;
-  display: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+  position: absolute; top: 100%; left: 0; list-style: none; margin: 0; padding: 0;
+  background: #fff; border: 1px solid #ddd; border-radius: 6px; min-width: 160px;
+  display: none; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-.drop-menu li a {
-  display: block;
-  padding: 10px 14px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #333;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+.drop-menu li a { display: block; padding: 10px 14px; text-decoration: none; font-size: 15px; color: #333; transition: background-color 0.2s ease, color 0.2s ease; }
 .drop-menu li a:hover { background-color: #50200a; color: #fff; }
-.dropdown:hover .drop-menu { display: block; }
-.dropdown.open .drop-menu { display: block; }
+.dropdown:hover .drop-menu, .dropdown.open .drop-menu { display: block; }
 
-/* Mobile Menu (hidden by default) */
+/* Mobile Menu */
 .mobile-menu {
-  display: none;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
+  display: none; flex-direction: column; gap: 15px; padding: 20px; background: #fff; border-bottom: 1px solid #ddd;
 }
 .mobile-menu.show { display: flex; }
-.mobile-menu a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-}
+.mobile-menu a { text-decoration: none; font-size: 16px; font-weight: 500; color: #333; }
 .mobile-menu a:hover { color: #d29836; }
 
-/* Override dropdowns inside mobile menu */
-.mobile-menu .dropdown {
+/* Mobile Dropdowns */
+.mobile-menu .dropdown { display: flex; flex-direction: column; }
+.mobile-menu .drop-link { padding: 8px 0; }
+.mobile-menu .drop-menu { position: relative; top: auto; left: auto; border: none; box-shadow: none; background: none; padding-left: 15px; display: none; flex-direction: column; }
+.mobile-menu .drop-menu li a { display: block; width: 100%; padding: 8px 10px; font-size: 15px; color: #555; border-radius: 6px; transition: background-color 0.12s ease, color 0.12s ease; }
+.mobile-menu .dropdown.open .drop-menu { display: flex; }
+
+/* Tap flash */
+.mobile-menu .drop-menu li a.is-tapping, .mobile-menu .drop-menu li a:hover { background-color: #50200a !important; color: #fff !important; }
+
+/* Mobile Contact Section */
+.mobile-contact {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack email and icons */
+  align-items: flex-start; /* left-align both rows */
+  gap: 8px;
 }
 
-.mobile-menu .drop-link {
-  padding: 8px 0;
-}
-
-.mobile-menu .drop-menu {
-  position: relative;   /* inline, not absolute */
-  top: auto;
-  left: auto;
-  border: none;
-  box-shadow: none;
-  background: none;
-  min-width: auto;
-  padding-left: 15px;
-  display: none;
-  flex-direction: column;
-}
-
-.mobile-menu .drop-menu li a {
-  display: block;
-  width: 100%;
-  padding: 8px 10px;
+.mobile-email {
   font-size: 15px;
-  color: #555;
-  border-radius: 6px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: background-color 0.12s ease, color 0.12s ease;
-}
-
-/* keep dropdown open in mobile */
-.mobile-menu .dropdown.open .drop-menu {
-  display: flex;
-}
-
-/* Flash effect on tap (CSS path) */
-.mobile-menu .drop-menu li a:active,
-.mobile-menu .drop-menu li a:focus {
-  background-color: #50200a;
-  color: #fff !important;
-}
-
-
-/* Flash effect on tap for mobile submenu links */
-.mobile-menu .drop-menu li a.is-tapping,
-.mobile-menu .drop-menu li a:hover {
-  background-color: #50200a !important;
-  color: #ffffff !important;
-}
-
-/* QR row (used inside contact dropdown) */
-.qr-row { display: flex; gap: 10px; margin: 10px 0; }
-.qr-row .qrcode { width: 100px; border-radius: 6px; }
-
-/* Contact dropdown (mobile) */
-.contact-menu {
-  padding: 10px 0 0 15px;
-  background: none;
-}
-.contact-menu p {
-  margin: 0 0 8px 0;
   font-weight: 600;
-}
-.contact-menu .qr-row {
-  display: flex;
-  gap: 10px;
-  margin: 10px 0;
-}
-.contact-menu .qrcode {
-  width: 100px;
-  border-radius: 6px;
+  color: #50200a;
+  margin: 0;
 }
 
-/* Hide desktop nav on mobile */
+/* Social icons row for mobile */
+.mobile-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* allow icons to wrap if too wide */
+}
+
+/* WeChat icon */
+.mobile-social .wechat {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* All icons visible */
+.mobile-social .icon,
+.mobile-social .wechat-icon {
+  width: 24px;  /* slightly larger */
+  height: 24px;
+  cursor: pointer;
+  filter: none; /* remove filters that hide them */
+  display: inline-block; /* ensure they show */
+}
+
+.mobile-social .icon, 
+.mobile-social .wechat-icon { 
+  filter: brightness(0) saturate(100%) invert(12%) sepia(29%) saturate(1543%) hue-rotate(337deg) brightness(95%) contrast(95%); }
+
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links, .language-dropdown { display: none; }
   .logo img { height: 60px; }
 }
 
-/* Main section */ 
+/* Main section */
 .main-section {
   background: #bea89d2b;
   color: #222;
