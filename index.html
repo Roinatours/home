@@ -129,17 +129,26 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenu.classList.toggle("show");
   });
 
+  // Mobile dropdown toggle
   document.querySelectorAll(".mobile-menu .drop-link").forEach(dropLink => {
     dropLink.addEventListener("click", (e) => {
       e.preventDefault();
-      const parent = dropLink.parentElement;
-      document.querySelectorAll(".mobile-menu .dropdown").forEach(d => {
-        if (d !== parent) d.classList.remove("open");
-      });
-      parent.classList.toggle("open");
+      const parentDropdown = dropLink.parentElement;
+
+      // Toggle the clicked dropdown
+      if (parentDropdown.classList.contains("open")) {
+        parentDropdown.classList.remove("open"); // close if already open
+      } else {
+        // Close other dropdowns
+        document.querySelectorAll(".mobile-menu .dropdown").forEach(d => {
+          if (d !== parentDropdown) d.classList.remove("open");
+        });
+        parentDropdown.classList.add("open"); // open this one
+      }
     });
   });
 
+  // tap flash effect for sub-links
   const mobileSubLinks = document.querySelectorAll(".mobile-menu .drop-menu li a");
   mobileSubLinks.forEach(a => {
     a.addEventListener("touchstart", () => a.classList.add("is-tapping"), { passive: true });
@@ -154,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("touchcancel", () => a.classList.remove("is-tapping"));
   });
 });
+
 </script>
 
 </body>

@@ -122,7 +122,9 @@ body { margin: 0; font-family: Arial, sans-serif; }
   font-weight: 600;
   color: #50200a;
   margin: 0;
+  text-decoration: none; /* remove underline */
 }
+
 
 /* Social icons row for mobile */
 .mobile-social {
