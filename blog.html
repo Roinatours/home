@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
+  <link rel="icon" href="data/Roina_Tours_Logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Top Header -->
+<!-- Top Header (hidden on mobile) -->
 <header class="top-header">
   <div class="social-icons">
     <div class="wechat">
@@ -24,12 +25,10 @@
         </div>
       </div>
     </div>
-    <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9?xsec_token=YBew2HOJjCNKIGAUprfQzed0j5g1wMqMmsje8w5oaElmg=&xsec_source=app_share&xhsshare=CopyLink&appuid=5cb2a8cd000000001002ff74&apptime=1756115688&share_id=1ba02eac1ba34da6a6ae867389b5149d" 
-      target="_blank" 
-      class="xiaohongshu">
+    <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9" target="_blank" class="xiaohongshu">
       <img src="data/icons/XiaoHongShu.png" class="icon">
     </a>
-    <a href="https://www.instagram.com/roinatours?igsh=czNycm5yamlvdG9q" target="_blank" class="instagram"><img src="data/icons/Instagram.png" class="icon"></a>
+    <a href="https://www.instagram.com/roinatours" target="_blank" class="instagram"><img src="data/icons/Instagram.png" class="icon"></a>
     <a href="https://www.linkedin.com/company/roina-tours/" target="_blank" class="linkedin"><img src="data/icons/LinkedIn.png" class="icon"></a>
     <div class="email"><img src="data/icons/Email.png" alt="Email"><p>roinatours@gmail.com</p></div>
   </div>
@@ -38,38 +37,79 @@
 <!-- Second Header -->
 <header class="second-header">
   <div class="navigation-panel">
-    <!-- Left Logo -->
-    <a href="javascript:void(0)" class="logo"><img src="data/Roina_Tours_Logo.png" alt="Roina Tours"></a>
-    
-    <!-- Center Nav Links (except language) -->
+    <a href="https://roinatours.github.io/home/" class="logo">
+      <img src="data/Roina_Tours_Logo.png" alt="Roina Tours">
+    </a>
+    <button class="menu-toggle">☰</button>
     <nav class="nav-links">
       <a href="https://roinatours.github.io/home/">Home</a>
-
-      <!-- Destinations -->
       <div class="dropdown">
         <a href="javascript:void(0)" class="drop-link">Destinations ▾</a>
         <ul class="drop-menu">
-          <li><a href="#">Gui Lin</a></li>
-          <li><a href="#">Xi An</a></li>
-          <li><a href="#">Hulunbuir</a></li>
-          <li><a href="#">Shanghai</a></li>
+          <li><a href="https://roinatours.github.io/home/gui-lin">Gui Lin</a></li>
+          <li><a href="https://roinatours.github.io/home/xi-an">Xi An</a></li>
+          <li><a href="https://roinatours.github.io/home/hulunbuir">Hulunbuir</a></li>
+          <li><a href="https://roinatours.github.io/home/shanghai">Shanghai</a></li>
         </ul>
       </div>
-
-      <a href="#">Blogs</a>
-      <a href="#">About Us</a>
+      <a href="https://roinatours.github.io/home/blog">Blogs</a>
+      <a href="https://roinatours.github.io/home/about-us">About Us</a>
     </nav>
-
-    <!-- Right Language -->
     <div class="language-dropdown dropdown">
       <a href="javascript:void(0)" class="drop-link">Language ▾</a>
       <ul class="drop-menu">
         <li><a href="https://roinatours.github.io/home/">English</a></li>
-        <li><a href="#">中文简体</a></li>
+        <li><a href="https://roinatours.github.io/home/index_ch">中文简体</a></li>
       </ul>
     </div>
   </div>
 </header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="https://roinatours.github.io/home/">Home</a>
+  <div class="dropdown">
+    <a href="javascript:void(0)" class="drop-link">Destinations ▾</a>
+    <ul class="drop-menu">
+      <li><a href="https://roinatours.github.io/home/gui-lin">Gui Lin</a></li>
+      <li><a href="https://roinatours.github.io/home/xi-an">Xi An</a></li>
+      <li><a href="https://roinatours.github.io/home/hulunbuir">Hulunbuir</a></li>
+      <li><a href="https://roinatours.github.io/home/shanghai">Shanghai</a></li>
+    </ul>
+  </div>
+  <a href="https://roinatours.github.io/home/blog">Blogs</a>
+  <a href="https://roinatours.github.io/home/about-us">About Us</a>
+  <div class="dropdown">
+    <a href="javascript:void(0)" class="drop-link">Language ▾</a>
+    <ul class="drop-menu">
+      <li><a href="https://roinatours.github.io/home/">English</a></li>
+      <li><a href="https://roinatours.github.io/home/index_ch">中文简体</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Contact Section -->
+  <div class="mobile-contact">
+    <p class="mobile-email">roinatours@gmail.com</p>
+    <div class="social-icons mobile-social">
+      <div class="wechat">
+        <img src="data/icons/Wechat.png" alt="WeChat" class="wechat-icon">
+        <div class="qr-container">
+          <div class="qr-item">
+            <img src="data/Wechat_Service_Account_QR_code.jpg" alt="WeChat Service Account" class="qrcode">
+            <p>Contact Us</p>
+          </div>
+          <div class="qr-item">
+            <img src="data/Wechat_Offical_Account_QR_code.JPG" alt="WeChat Official Account" class="qrcode">
+            <p>Official Account</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.xiaohongshu.com/user/profile/65dda91b000000000500f1e9" target="_blank"><img src="data/icons/XiaoHongShu.png" class="icon"></a>
+      <a href="https://www.instagram.com/roinatours" target="_blank"><img src="data/icons/Instagram.png" class="icon"></a>
+      <a href="https://www.linkedin.com/company/roina-tours/" target="_blank"><img src="data/icons/LinkedIn.png" class="icon"></a>
+    </div>
+  </div>
+</div>
 
 <!-- Main -->
 <main>
@@ -81,36 +121,42 @@
 </main>
 
 <script>
-  // QR toggle on mobile
-  document.addEventListener("DOMContentLoaded", () => {
-    const wechatLink = document.querySelector(".wechat");
-    const qrBox = document.querySelector(".qr-container");
-    wechatLink.addEventListener("click", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  toggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("show");
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll(".mobile-menu .drop-link").forEach(dropLink => {
+    dropLink.addEventListener("click", (e) => {
       e.preventDefault();
-      qrBox.classList.toggle("show");
-    });
-    document.addEventListener("click", (e) => {
-      if (!wechatLink.contains(e.target)) qrBox.classList.remove("show");
-    });
+      const parentDropdown = dropLink.parentElement;
 
-    // Dropdown toggle on mobile
-    document.querySelectorAll(".dropdown .drop-link").forEach(dropLink => {
-      dropLink.addEventListener("click", (e) => {
-        if (window.innerWidth <= 768) { // only on mobile
-          e.preventDefault();
-          const parentDropdown = dropLink.parentElement;
-          parentDropdown.classList.toggle("open");
-        }
-      });
-    });
-
-    // Close dropdown if clicked outside
-    document.addEventListener("click", (e) => {
-      document.querySelectorAll(".dropdown.open").forEach(d => {
-        if (!d.contains(e.target)) d.classList.remove("open");
-      });
+      // Toggle only this dropdown
+      parentDropdown.classList.toggle("open");
     });
   });
+
+  // Tap flash effect for sub-links
+  const mobileSubLinks = document.querySelectorAll(".mobile-menu .drop-menu li a");
+  mobileSubLinks.forEach(a => {
+    a.addEventListener("touchstart", () => a.classList.add("is-tapping"), { passive: true });
+    a.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      a.classList.remove("is-tapping");
+      const url = a.getAttribute("href");
+      if (url && url !== "javascript:void(0)") {
+        setTimeout(() => { window.location.href = url; }, 150);
+      }
+    });
+    a.addEventListener("touchcancel", () => a.classList.remove("is-tapping"));
+  });
+});
+
+
 </script>
 
 </body>
